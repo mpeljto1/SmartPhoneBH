@@ -1,0 +1,434 @@
+.omotac {
+	width: 1345px;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0 0 100px;
+}
+
+#header {
+	position: relative;
+	background-color: #CCD1D1;
+	height: 100px;
+	width: 100%;
+}
+/* prostor za logo */
+#logo {
+	background-color: #CCD1D1;
+	position: absolute;
+	top: 0px;
+	left: 80px;
+	width: 200px;
+	height: 100px;
+}
+
+
+
+/* dizajn logo-a */
+#okvirTelefona {
+	border:2px solid black;
+	border-right-width: 8px;
+	border-left-width: 8px;
+	border-top-width: 15px;
+	border-bottom-width: 15px;
+	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 11px;
+	border-top-left-radius: 11px;
+	border-top-right-radius: 11px;
+	width: 35px;
+	height: 50px;
+	margin-left: 60px;
+	margin-top: 8px;
+}
+#okvirTelefona:hover {
+	background-color: white;
+}
+
+#linkLogo {
+	padding: 0px 0px 0px 0px;
+}
+
+/* isto u sklopu samog logo-a */
+#dugme {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	margin-left: 80px;
+	margin-top: -13px;
+}
+/* također pripada logu */
+#zvucnik {
+	width: 10px;
+	height: 3px;
+	border-radius: 30%;
+	background-color: white;
+	margin-left: 80px;
+	margin-top: -70px;
+}
+
+#meni {
+	position: absolute;
+	background-color: #CCD1D1;
+	margin-left: 300px;
+	padding: 0px 0px 0px 0px;
+	bottom: 0px;
+	height: 54px;
+}
+
+#meni ul {
+	list-style-type: none;
+}
+
+#meni ul li {
+	display: inline;
+	font-size: 1.5em;
+	font-family: sans-serif;
+}
+/* linkovi u uo listi koja se nalazi u headeru*/
+#meni li a {
+	margin: 0px 0px 0px 0px;
+	text-decoration: none;
+	color: black;
+}
+/* selektuje sljedeci izbor*/
+#liNovosti a:hover {
+	background-color: red;
+	color: white;
+}
+
+#liPodstranica a:hover {
+	background-color: purple;
+	color: white;
+}
+
+#liForma a:hover {
+	background-color: #90C3D4;
+	color: white;
+}
+
+#liListaLinkova a:hover {
+	background-color: #00ff00;
+	color: white;
+}
+
+/*meni sa linkovima u headeru */
+#liNovosti {
+	margin-right: 50px;
+	margin-left: -10px;
+	border-top:5px solid red;
+}
+
+#liPodstranica {
+	margin-right: 50px;
+	border-top:5px solid purple;
+}
+
+#liForma {
+	margin-right: 50px;
+	border-top:5px solid #90C3D4;
+}
+
+#liListaLinkova {
+	border-top: 5px solid #00ff00;
+}
+
+#header h1 {
+	position: absolute;
+	margin-top: 7px;
+	margin-left: 300px;
+	margin-right: auto;
+	
+}
+/*naziv stranice kada se klikne da ponovo ucita pocetnu stranicu*/
+#naslovLink {
+	text-decoration: none;
+	color: black;
+}
+
+/*CSS za prvu podstranicu - Novosti */
+
+#okvirZaNovosti {
+	position: relative;
+	width: 85%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#okvirZaNovosti p {
+	margin-top: -5px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+}
+
+.novosti {
+	position: relative;
+	border-bottom: 1px solid blue;
+	width: 350px;
+	height: 200px;
+	display: inline-block;
+	margin-right: 25px;
+	margin-bottom: 15px;
+}
+
+#okvirZaNovosti a {
+	text-decoration: none;
+	color: black;
+}
+
+#okvirZaNovosti div img {
+	width: auto;
+	max-width: 200px;
+	height: auto;
+	max-height: 200px;
+	margin: 0px 0px 0px 0px;
+}
+
+#okvirZaNovosti div p {
+	float: right;
+	width: 150px;
+	height: auto;
+	max-height: 200px;
+	margin: 10px 0px 0px 0px;
+	font-family: verdana, sans-serif;
+}
+
+/* css za podnozje */
+
+#footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 80px;
+	width: 100%;
+	padding: 0;
+	background-color: black;
+}
+
+#copyright {
+	position: absolute;
+	color: white;
+	font-size: 15px;
+	bottom: 0;
+	left: 40%;
+	margin: 0;
+}
+
+#drmreze {
+	position: absolute;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	top: 0;
+	left: 36%;
+	margin:10px;
+}
+
+#drmreze li {
+	display: inline;
+}
+
+#footer a {
+	text-decoration: none;
+}
+
+/* CSS za 2  podstranicu */
+
+#lijevo {
+	position: relative;
+	width: 60%;
+	height: auto;
+	min-height: 50px;
+	background-color: #CCD1D1;
+	margin-left: 20%;
+	border-top:1px solid black;
+}
+
+#lijevo ul {
+	margin-left: 5%;
+	width: 90%;
+	margin-right: 5%;
+}
+
+#lijevo ul li {
+	display: inline;
+	font-size: 1.5em;
+	padding: 15px;
+	color: white;
+}
+
+#okvirZaTabelu {
+	position: relative;
+	width: 75%;
+	min-height: 400px;
+	height: auto;
+	background-color: white;
+	margin-left: 10%;
+}
+
+.tabelaBrendovi {
+	margin-bottom: 20%;
+
+}
+
+.tabelaBrendovi a {
+	text-decoration: none;
+	color: black;
+}
+
+.tabelaBrendovi a:hover {
+	background-color: black;
+	color: white;
+}
+
+#tabelaSlike {
+	border:1px dashed black;
+	border-collapse: collapse;
+}
+
+#tabelaSlike td {
+	padding: 20px;
+	border:1px dashed black;
+}
+
+#tabelaSlike th {
+	background-color: black;
+	color: white;
+}
+
+/*CSS za trecu postranicu - Kontakt */
+
+#formaZaKontakt {
+	position: relative;
+  	margin: auto;
+  	top: 5px;
+  	right: 0;
+  	bottom: 0;
+  	left: 0px;
+  	width: 500px;
+  	height: 470px;
+  	background-color: #ccc;
+  	border-radius: 3px;
+}
+
+#formaZaKontakt h1 {
+	text-align: center;
+}
+
+#forma {
+	margin-left: 10px;
+	position: absolute;
+}
+
+#forma ul {
+	list-style: none;
+}
+
+#komentar {
+	resize:none;
+	max-width: 480px;
+}
+
+#submitDugme {
+	margin-left: 75%;
+	margin-top: 5px;
+}
+
+/* CSS za 4 podstranicu - Lista linkova */
+
+#h1Linkovi {
+	margin-left: 20px;
+}
+
+#listaZaLinkove li {
+	font-family: sans-serif;
+}
+
+#listaZaLinkove li a {
+	text-decoration: none;
+	color: blue;
+}
+
+#listaZaLinkove li a:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+#listaZaLinkove li a:visited {
+	color: purple;
+	text-decoration: none;
+}
+
+#listaZaLinkove li a:visited:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+#tackasto {
+	border:1px dotted black;
+}
+
+.brendovi {
+	margin-left: -20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	font-size: 1.5em;
+	list-style: none;
+	text-align: justify;
+}
+
+#samsung a:hover {
+	list-style : none;
+	background: url(SamsungLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+}
+
+#apple a:hover {
+	list-style : none;
+	background: url(appleLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+	padding-bottom: 15px;
+}
+
+#sony a:hover {
+	list-style : none;
+	background: url(sonyLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+}
+
+#lg a:hover {
+	list-style : none;
+	background: url(lgLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+}
+
+#htc a:hover {
+	list-style : none;
+	background: url(htcLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+	padding-bottom: 10px;
+}
+
+#huawei a:hover {
+	list-style : none;
+	background: url(HuaweiLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+#motorola a:hover {
+	list-style : none;
+	background: url(motorolaLogo.jpg) left center no-repeat;
+	padding-left: 55px;
+	padding-top: 10px;
+}
+
+
