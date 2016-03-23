@@ -1,5 +1,5 @@
 .omotac {
-	width: 1345px;
+	min-width: 1345px;
 }
 
 html {
@@ -301,6 +301,10 @@ body {
 	background-color: black;
 	color: white;
 }
+.parni {
+	background-color: #CCD1D1;
+}
+
 
 /*CSS za trecu postranicu - Kontakt */
 
