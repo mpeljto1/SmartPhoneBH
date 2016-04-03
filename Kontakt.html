@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="SmartphoneBH.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="validacijaForme.js"></script>
 </head>
 <body>
 <div class="omotac">
@@ -28,9 +29,9 @@
 		<h1>Kontakt</h1>
 		<form id="forma">
 			<label for="ime">Ime i prezime:</label>
-			<input type="text" id="ime" placeholder="Ime i prezime"> <br><br>
+			<input type="text" id="ime" placeholder="Ime i prezime" onfocus="validiraj(ime)"><p id="pZaIme" class="error"></p> <br><br>
 			<label for="email">E-mail adresa:</label>
-			<input type="text" id="email" placeholder="E-mail"> <br><br>
+			<input type="text" id="email" placeholder="E-mail" onfocus="validiraj(email)"><p id="pZaEmail" class="error"></p> <br><br>
 			<label>Spol:</label>   
 			<label for="muško">Muško</label>
 			<input type="radio" id="muško" value="muško" name="spol">
@@ -60,8 +61,8 @@
 				</li>
 			</ul>
 			<label for="komentar">Vaše pitanje:</label> <br>
-			<textarea id="komentar" rows="5" cols="30" placeholder="Vaše pitanje"></textarea> 
-			<input type="submit" value="Pošalji" id="submitDugme">
+			<textarea id="komentar" rows="5" cols="30" placeholder="Vaše pitanje"></textarea> <br>
+			<input type="submit" value="Pošalji" id="submitDugme" onclick="return posalji()">
 		</form>
 	</div>
 	<div id="footer">
