@@ -1,5 +1,4 @@
 window.onload = function () {
-
 	var vremenaObjava = document.getElementsByClassName("vrijemeObjave");
 	var porukaObjave = document.getElementsByClassName("porukaObjave");
 	var x ;
@@ -61,7 +60,7 @@ window.onload = function () {
 			|| (datumObjave.getMonth() === danasnjiDatum.getMonth()-1 && datumObjave.getDate() >= danasnjiDatum.getDate())) {
 			porukaObjave[i].innerHTML = "Novost je objavljena prije " + Math.round(razlika_u_sedmicama) + " sedmice";
 		} else  {
-			porukaObjave[i].innerHTML = "Novost je objavljena: " + datumObjave.getDate() + "." + datumObjave.getMonth() + "." + datumObjave.getFullYear()+ ".";
+			porukaObjave[i].innerHTML = "Novost je objavljena: " + datumObjave.getDate() + "." + (datumObjave.getMonth()+1) + "." + datumObjave.getFullYear()+ ".";
 		}	
 	}
 	

@@ -1,6 +1,7 @@
 function validiraj(string) {
 	if(string == ime) var myVar= setInterval(validirajIme,100);
 	if(string == email) var myVar= setInterval(validirajEmail,100);
+	if(string == vrijemeObjave) setInterval(validirajVrijemeObjave,100);
 }
 
 function validirajIme() {
@@ -45,5 +46,5 @@ function posalji() {
 	return false;
 }
 
-
+/*--------------------------------- validacije za dodavanje novosti ------------------------------------------------------------ */
 

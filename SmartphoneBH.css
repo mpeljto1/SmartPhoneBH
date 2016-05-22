@@ -117,6 +117,16 @@ body {
 	color: white;
 }
 
+#liLogin a:hover {
+	background-color: black;
+	color: white;
+}
+
+#liAdminPage a:hover {
+	background-color: black;
+	color: white;
+}
+
 /*meni sa linkovima u headeru */
 #liNovosti {
 	margin-right: 50px;
@@ -136,6 +146,12 @@ body {
 
 #liListaLinkova {
 	border-top: 5px solid #00ff00;
+	margin-right: 50px;
+}
+
+#liLogin,#liAdminPage {
+	margin-right: 50px;
+	border-top: 5px solid black;
 }
 
 #header h1 {
@@ -198,6 +214,7 @@ body {
 	margin: 10px 0px 0px 0px;
 	font-family: verdana, sans-serif;
 }
+
 
 .vrijemObjave {
 	float: left;
@@ -461,6 +478,76 @@ body {
 	background: url(motorolaLogo.jpg) left center no-repeat;
 	padding-left: 55px;
 	padding-top: 10px;
+}
+
+/* css za 5 podstranicu loginpage */
+#formaZaLogin {
+	position: relative;
+  	margin: auto;
+  	top: 5px;
+  	right: 0;
+  	bottom: 0;
+  	left: 0px;
+  	width: 300px;
+  	height: 200px;
+  	background-color: #ccc;
+  	border-radius: 5px;
+}
+
+#formaZaLogin h1 {
+	text-align: center;
+}
+
+#formaLoginPage {
+	margin-left: 10px;
+	position: absolute;
+}
+
+#loginButton {
+	width: 100px;
+}
+
+#buttonHolder {
+	text-align: center;
+}
+
+#formaZaLogin h4 {
+	color: red;
+	text-align: center;
+}
+
+/* css za admin page */
+
+#adminPageForma {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 600px;
+	padding: 30px;
+	background-color: #ccc;
+  	border-radius: 5px;
+}
+
+#tekstVijesti {
+	resize: none;
+}
+
+#adminPageForma label {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+}
+
+#adminPageForma input, label {
+    float:left;
+}
+#adminPageForma input, textarea {
+	width: 200px;
+}
+#adminPageForma h2 {
+	text-align: center;
 }
 
 
