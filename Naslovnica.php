@@ -25,7 +25,7 @@
 				<li id="liPodstranica"><a href="Tabele.php"><span>Telefoni</span></a></li>
 				<li id="liForma"><a href="Kontakt.php"><span>Forma za kontakt</span></a></li>
 				<li id="liListaLinkova"><a href="Linkovi.php">Lista linkova</a></li>
-				<li id="liLogin"><a href="LoginPage.php">Login</a></li>
+				<li id="liLogin"><a href="LoginPage.php">Login/Logout</a></li>
 				<?php
 					session_start();
 					if(isset($_SESSION['login'])) {
@@ -39,10 +39,28 @@
 	</div>
 	<?php
 
-		$sveVijesti = file("vijesti.csv");
+		$sveVijesti = array();
+     	$veza = new PDO("mysql:dbname=smartphonebh;host=localhost;charset=utf8", "root", "");
+     	$veza->exec("set names utf8");
+     	$rezultat = $veza->query("select id, UNIX_TIMESTAMP(datum) datum2, putanja, altSlike, kodDrzave, brojAutora, tekst, autor from novosti");
+     	if (!$rezultat) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
+     	}
+
+     	foreach ($rezultat as $vijest) {
+          //print $vijest['tekst']." ".$vijest['putanja']." ".$vijest['altSlike']." ".date("d.m.Y. h:i", $vijest['datum2'])."<br>";
+          array_push($sveVijesti, date("Y-m-d H:i:s", $vijest['datum2']).",".$vijest['putanja'].",".$vijest['altSlike'].",".$vijest['kodDrzave'].",".$vijest['brojAutora'].",".$vijest['tekst']);
+     } 
+
+     	
+		//$sveVijesti = file("vijesti.csv");
+		
 		$sortirajAbecedno = false;
-		function prikaziVijest($datum,$putanja,$altSlike,$kodDrzave,$brojAutora,$tekst) {
-			print '<a href="">';
+		function prikaziVijest($datum,$putanja,$altSlike,$kodDrzave,$brojAutora,$tekst,$idVijesti) {
+			
+			print '<a href="NovostDetaljno.php?varname=' .$idVijesti . '">';
 			print '<div class="novosti">';
 			print '<img src="Novostislike/'.$putanja.'" alt="'.$altSlike.'"';
 			print "/>";
@@ -54,7 +72,7 @@
 			print "</div>";
 			print "</div>";
 			print "</a>";
-		}
+		} 
 
 		print '<div id="okvirZaNovosti">';
 		print "<hr>";
@@ -111,11 +129,13 @@
 			}
 
 		}
+		$x=0;
 		foreach ($sveVijesti as $value) {
 			$temp = explode(',', $value);
-			prikaziVijest($temp[0],$temp[1],$temp[2],$temp[3],$temp[4],$temp[5]);
+			prikaziVijest($temp[0],$temp[1],$temp[2],$temp[3],$temp[4],$temp[5],$x);
+			$x = $x + 1;
 		}
-
+		$_SESSION['sveVijesti'] = $sveVijesti;
 		if($sortirajAbecedno) echo "Hello";
 
 		print "</div>";

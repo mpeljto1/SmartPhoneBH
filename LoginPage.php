@@ -20,7 +20,7 @@
         $username = $_SESSION['username'];
     
    if(isset($_POST['login'])) {
-        $file = explode( PHP_EOL, file_get_contents( "korisnici.csv" ));
+      /*  $file = explode( PHP_EOL, file_get_contents( "korisnici.csv" ));
         foreach( $file as $line ) {
             list($username, $password) = explode("," , $line);
             if ($_POST['username'] == $username && password_verify($_POST['password'],$password)) {
@@ -28,11 +28,34 @@
                 $_SESSION['username'] = $username;
                 break;
         }
+      }*/
+
+      $veza = new PDO("mysql:dbname=smartphonebh;host=localhost;charset=utf8", "root", "");
+      $veza->exec("set names utf8");
+      $rezultat = $veza->query("select ime, prezime, username, password from autori");
+      if (!$rezultat) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
       }
+
+      foreach ($rezultat as $korisnik) {
+          if($_POST['username'] == $korisnik['username'] && password_verify($_POST['password'], $korisnik['password'])) {
+              $_SESSION['login'] = true; 
+              //$_SESSION['username'] = $username;
+              $_SESSION['username'] = $korisnik['username'];
+              $_SESSION['imeAutora'] = $korisnik['ime'];
+              $_SESSION['prezimeAutora'] = $korisnik['prezime'];
+              break;
+          }
+     } 
   }
 
   if(isset($_POST['logout'])) {
     unset($_SESSION['login']);
+    unset($_SESSION['username']);
+    unset($_SESSION['imeAutora']);
+    unset($_SESSION['prezimeAutora']);
   }
  ?>  
 
@@ -56,7 +79,7 @@
             <li id="liPodstranica"><a href="Tabele.php"><span>Telefoni</span></a></li>
             <li id="liForma"><a href="Kontakt.php"><span>Forma za kontakt</span></a></li>
             <li id="liListaLinkova"><a href="Linkovi.php">Lista linkova</a></li>
-            <li id="liLogin"><a href="LoginPage.php">Login</a></li>
+            <li id="liLogin"><a href="LoginPage.php">Login/Logout</a></li>
             <?php
                 if(isset($_SESSION['login'])) {
             ?>  
@@ -78,7 +101,14 @@
          <div id="buttonHolder">
             <input type="submit" value="Login" id="loginButton" name="login">
             <input type="submit" name="logout" value="Logout">
-         </div>
+         </div> <br>
+         <?php
+                if(isset($_SESSION['login'])) {
+            ?> 
+              <a href="PromjenaSifre.php">Promijenite šifru</a>
+              <?php
+                }
+            ?> 
       </form>
    </div>
 
