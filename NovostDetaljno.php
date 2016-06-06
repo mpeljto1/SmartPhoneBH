@@ -17,7 +17,7 @@
         define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
         define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-           $servername = constant("DB_HOST");
+            $servername = constant("DB_HOST");
             $username = constant("DB_USER");
             $password = constant("DB_PASS");
             $dbname = constant("DB_NAME");
@@ -99,7 +99,7 @@
         define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
         define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-            $servername = constant("DB_HOST");
+           $servername = constant("DB_HOST");
             $username = constant("DB_USER");
             $password = constant("DB_PASS");
             $dbname = constant("DB_NAME");
