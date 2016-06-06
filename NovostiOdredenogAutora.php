@@ -51,10 +51,10 @@
         define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
         define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-            $servername = DB_HOST;
-            $username = DB_USER;
-            $password = DB_PASS;
-            $dbname = DB_NAME;
+            $servername = constant("DB_HOST");
+            $username = constant("DB_USER");
+            $password = constant("DB_PASS");
+            $dbname = constant("DB_NAME");
       // Create connection
       $conn = new mysqli($servername, $username, $password, $dbname);
       // Check connection
