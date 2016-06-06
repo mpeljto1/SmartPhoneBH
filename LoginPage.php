@@ -29,8 +29,14 @@
                 break;
         }
       }*/
+      define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-      $veza = new PDO("mysql:dbname=smartphonebh;host=localhost;charset=utf8", "root", "");
+      $connectionString = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+      $veza = new PDO($connectionString, DB_USER, DB_PASS);
       $veza->exec("set names utf8");
       $rezultat = $veza->query("select ime, prezime, username, password from autori");
       if (!$rezultat) {

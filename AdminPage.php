@@ -329,10 +329,17 @@
             //$nova =$vrijemeI.",".$nazivSlikeI.",".$altNazivSlikeI.",".$kodDrzaveI.",".$brojAutoraI.",".$tekstI."\n"; 
             //array_push($vijesti, $nova);
             //file_put_contents("vijesti.csv", $vijesti); 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+
+            define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -368,10 +375,16 @@
     	$passwordI = test_input($_POST['passwordAutora']);
     	$pass = password_hash($passwordI, PASSWORD_DEFAULT);
     	$ok = true;
-    		$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    		 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -406,10 +419,16 @@
     if(isset($_POST['obrisiButton'])) {
     	$usernameI = test_input($_POST['usernameAutora']);
 
-    	$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    	 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -439,10 +458,16 @@
     	$passwordI = test_input($_POST['ipasswordAutora']);
     	$pass = password_hash($passwordI, PASSWORD_DEFAULT);
     	$ok = false;
-    		$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    		 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -523,10 +548,16 @@
     if(isset($_POST['obrisiNovost'])) {
     	$idNovostiI = test_input($_POST['idNovosti']);
 
-    	$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    	 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -549,10 +580,16 @@
     if(isset($_POST['obrisiKomentar'])) {
     	$idNovostiI = test_input($_POST['idKomentara']);
 
-    	$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    	 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -573,10 +610,16 @@
     if(isset($_POST['dozvoliKomentare'])) {
     	$idNovostiI = test_input($_POST['idNovosti']);
 
-    	$servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "smartphonebh";
+    	 define('DB_HOST',getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+            $servername = DB_HOST;
+            $username = DB_USER;
+            $password = DB_PASS;
+            $dbname = DB_NAME;
             // Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
